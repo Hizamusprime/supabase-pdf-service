@@ -1,0 +1,37 @@
+[2J[3J[H[[90m10:21:59 PM[0m] Starting compilation in watch mode...
+
+[[90m10:22:01 PM[0m] Found 0 errors. Watching for file changes.
+
+[32m[Nest] 1772  - [39m03/06/2026, 10:22:01 PM [32m    LOG[39m [38;5;3m[NestFactory] [39m[32mStarting Nest application...[39m
+[32m[Nest] 1772  - [39m03/06/2026, 10:22:01 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mConfigHostModule dependencies initialized[39m[38;5;3m +18ms[39m
+[32m[Nest] 1772  - [39m03/06/2026, 10:22:01 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAppModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 1772  - [39m03/06/2026, 10:22:01 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mWebhookModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 1772  - [39m03/06/2026, 10:22:01 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mConfigModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 1772  - [39m03/06/2026, 10:22:01 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mAppController {/}:[39m[38;5;3m +9ms[39m
+[32m[Nest] 1772  - [39m03/06/2026, 10:22:01 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/, GET} route[39m[38;5;3m +2ms[39m
+[32m[Nest] 1772  - [39m03/06/2026, 10:22:01 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mWebhookController {/webhook}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 1772  - [39m03/06/2026, 10:22:01 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/webhook/supabase, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 1772  - [39m03/06/2026, 10:22:01 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/webhook/supabase, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 1772  - [39m03/06/2026, 10:22:01 PM [32m    LOG[39m [38;5;3m[NestApplication] [39m[32mNest application successfully started[39m[38;5;3m +2ms[39m
+Service running on port 3000
+API Documentation: http://localhost:3000/api-docs
+[2J[3J[H[[90m10:23:30 PM[0m] File change detected. Starting incremental compilation...
+
+[[90m10:23:30 PM[0m] Found 0 errors. Watching for file changes.
+
+[32m[Nest] 1890  - [39m03/06/2026, 10:23:30 PM [32m    LOG[39m [38;5;3m[NestFactory] [39m[32mStarting Nest application...[39m
+[32m[Nest] 1890  - [39m03/06/2026, 10:23:30 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mConfigHostModule dependencies initialized[39m[38;5;3m +26ms[39m
+[32m[Nest] 1890  - [39m03/06/2026, 10:23:30 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAppModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 1890  - [39m03/06/2026, 10:23:30 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mWebhookModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 1890  - [39m03/06/2026, 10:23:30 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mConfigModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 1890  - [39m03/06/2026, 10:23:30 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mAppController {/}:[39m[38;5;3m +19ms[39m
+[32m[Nest] 1890  - [39m03/06/2026, 10:23:30 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/, GET} route[39m[38;5;3m +2ms[39m
+[32m[Nest] 1890  - [39m03/06/2026, 10:23:30 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mWebhookController {/webhook}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 1890  - [39m03/06/2026, 10:23:30 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/webhook/supabase, GET} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 1890  - [39m03/06/2026, 10:23:30 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/webhook/supabase, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 1890  - [39m03/06/2026, 10:23:30 PM [32m    LOG[39m [38;5;3m[NestApplication] [39m[32mNest application successfully started[39m[38;5;3m +2ms[39m
+Service running on port 3000
+API Documentation: http://localhost:3000/api-docs
+[32m[Nest] 1890  - [39m03/06/2026, 10:23:43 PM [32m    LOG[39m [38;5;3m[WebhookController] [39m[32mReceived INSERT event for table: jobs[39m
+[32m[Nest] 1890  - [39m03/06/2026, 10:23:43 PM [32m    LOG[39m [38;5;3m[WebhookController] [39m[32mNew job created: 550e8400-e29b-41d4-a716-446655440000. Generating Quote PDF...[39m
+[32m[Nest] 1890  - [39m03/06/2026, 10:23:43 PM [32m    LOG[39m [38;5;3m[PdfGenerationService] [39m[32mStarting PDF generation for job 550e8400-e29b-41d4-a716-446655440000, type: quote[39m

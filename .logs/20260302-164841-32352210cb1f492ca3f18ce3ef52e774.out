@@ -1,0 +1,49 @@
+➤ YN0000: · Yarn 4.12.0
+➤ YN0000: ┌ Resolution step
+➤ YN0085: │ + @supabase/supabase-js@npm:2.98.0, @supabase/auth-js@npm:2.98.0, @supabase/functions-js@npm:2.98.0, @supabase/postgrest-js@npm:2.98.0, and 6 more.
+➤ YN0000: └ Completed in 0s 370ms
+➤ YN0000: ┌ Post-resolution validation
+➤ YN0002: │ nodejs_space@workspace:. doesn't provide webpack (p687b73), requested by ts-loader.
+➤ YN0086: │ Some peer dependencies are incorrectly met by your project; run yarn explain peer-requirements <hash> for details, where <hash> is the six-letter p-prefixed code.
+➤ YN0000: └ Completed
+➤ YN0000: ┌ Fetch step
+➤ YN0013: │ 9 packages were added to the project (+ 4.8 MiB).
+➤ YN0000: └ Completed in 0s 535ms
+➤ YN0000: ┌ Link step
+➤ YN0000: └ Completed in 1s 230ms
+➤ YN0000: · Done with warnings in 2s 239ms
+Environment variables loaded from .env
+Starting server...
+[2J[3J[H[[90m4:48:45 PM[0m] Starting compilation in watch mode...
+
+[[90m4:48:47 PM[0m] Found 0 errors. Watching for file changes.
+
+[32m[Nest] 687  - [39m03/02/2026, 4:48:47 PM [32m    LOG[39m [38;5;3m[NestFactory] [39m[32mStarting Nest application...[39m
+[32m[Nest] 687  - [39m03/02/2026, 4:48:47 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mConfigHostModule dependencies initialized[39m[38;5;3m +18ms[39m
+[32m[Nest] 687  - [39m03/02/2026, 4:48:47 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAppModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 687  - [39m03/02/2026, 4:48:47 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mWebhookModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 687  - [39m03/02/2026, 4:48:47 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mConfigModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 687  - [39m03/02/2026, 4:48:47 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mAppController {/}:[39m[38;5;3m +9ms[39m
+[32m[Nest] 687  - [39m03/02/2026, 4:48:47 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/, GET} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 687  - [39m03/02/2026, 4:48:47 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mWebhookController {/webhook}:[39m[38;5;3m +1ms[39m
+[32m[Nest] 687  - [39m03/02/2026, 4:48:47 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/webhook/supabase, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 687  - [39m03/02/2026, 4:48:47 PM [32m    LOG[39m [38;5;3m[NestApplication] [39m[32mNest application successfully started[39m[38;5;3m +1ms[39m
+Service running on port 3000
+API Documentation: http://localhost:3000/api-docs
+[2J[3J[H[[90m4:53:35 PM[0m] File change detected. Starting incremental compilation...
+
+[[90m4:53:35 PM[0m] Found 0 errors. Watching for file changes.
+
+[32m[Nest] 785  - [39m03/02/2026, 4:53:35 PM [32m    LOG[39m [38;5;3m[NestFactory] [39m[32mStarting Nest application...[39m
+[32m[Nest] 785  - [39m03/02/2026, 4:53:35 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mConfigHostModule dependencies initialized[39m[38;5;3m +25ms[39m
+[32m[Nest] 785  - [39m03/02/2026, 4:53:35 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAppModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 785  - [39m03/02/2026, 4:53:35 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mWebhookModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 785  - [39m03/02/2026, 4:53:35 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mConfigModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 785  - [39m03/02/2026, 4:53:35 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mAppController {/}:[39m[38;5;3m +12ms[39m
+[32m[Nest] 785  - [39m03/02/2026, 4:53:35 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/, GET} route[39m[38;5;3m +2ms[39m
+[32m[Nest] 785  - [39m03/02/2026, 4:53:35 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mWebhookController {/webhook}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 785  - [39m03/02/2026, 4:53:35 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/webhook/supabase, GET} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 785  - [39m03/02/2026, 4:53:35 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/webhook/supabase, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 785  - [39m03/02/2026, 4:53:35 PM [32m    LOG[39m [38;5;3m[NestApplication] [39m[32mNest application successfully started[39m[38;5;3m +2ms[39m
+Service running on port 3000
+API Documentation: http://localhost:3000/api-docs
