@@ -1,5 +1,6 @@
+
 import express from "express";
-import { fetchRecord, uploadPDF } from "./services/supabase.js";
+import { fetchRecord, uploadPDF, updateJobPdfUrl } from "./services/supabase.js";
 import { generatePDF } from "./services/pdf.js";
 
 const app = express();
@@ -50,6 +51,7 @@ app.post("/webhook", async (req, res) => {
       const pdfBuffer = await generatePDF(templateName, data);
       const filePath = `${templateName}/${id}_${Date.now()}.pdf`;
       const url = await uploadPDF(pdfBuffer, filePath);
+      await updateJobPdfUrl(id, templateName, url);
       urls.push({ template: templateName, url });
       console.log(`✅ ${templateName}.pdf uploaded: ${url}`);
     }
@@ -62,4 +64,4 @@ app.post("/webhook", async (req, res) => {
   }
 });
 
-app.listen(PORT, () => console.log(`🚀 Server listening on port ${PORT}`));
+app.listen(PORT, () => console.log(`🚀 Server listening on port ${PORT}`));76 

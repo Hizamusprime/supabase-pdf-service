@@ -1,3 +1,4 @@
+
 import { createClient } from "@supabase/supabase-js";
 
 export const supabase = createClient(
@@ -41,4 +42,23 @@ export async function uploadPDF(pdfBuffer, filePath) {
 
   const { data } = supabase.storage.from(BUCKET).getPublicUrl(filePath);
   return data.publicUrl;
+}
+
+// Write PDF URL back to jobs table so n8n can pick it up
+export async function updateJobPdfUrl(jobId, templateName, url) {
+  const colMap = {
+    quote:        "quote_pdf_url",
+    invoice:      "invoice_pdf_url",
+    swms:         "swms_pdf_url",
+    toolbox_talk: "toolbox_pdf_url",
+  };
+  const col = colMap[templateName];
+  if (!col) return;
+
+  const { error } = await supabase
+    .from("jobs")
+    .update({ [col]: url })
+    .eq("id", jobId);
+
+  if (error) console.error(`Failed to update ${col}:`, error.message);
 }
