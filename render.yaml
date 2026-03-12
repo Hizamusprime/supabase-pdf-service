@@ -6,8 +6,8 @@ services:
     startCommand: npm start
     envVars:
       - key: SUPABASE_URL
-        sync: https://obhmgszztpugcvgbuofd.supabase.co
+        sync: false
       - key: SUPABASE_SERVICE_ROLE_KEY
-        sync: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9iaG1nc3p6dHB1Z2N2Z2J1b2ZkIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc3MjIxNzE1NywiZXhwIjoyMDg3NzkzMTU3fQ.g4REVHDW6Z3JQO8T3abvmigRAZ7ebHgB_ap9YpFsLOk
+        sync: false
       - key: SUPABASE_BUCKET
-        sync: PDF_OUTPUT
+        sync: false
