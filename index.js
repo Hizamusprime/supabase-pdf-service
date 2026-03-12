@@ -32,7 +32,7 @@ app.post("/webhook", async (req, res) => {
       return res.status(400).json({ error: "Missing status on record" });
     }
 
-    const templates = STATUS_TEMPLATES[status];
+    const templates = STATUS_TEMPLATES[status.toLowerCase()];
 
     if (!templates) {
       console.log(`⏭️ No PDF needed for status: ${status}`);
