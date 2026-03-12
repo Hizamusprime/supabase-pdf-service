@@ -1,5 +1,4 @@
-import express from "express";import "dotenv/config";
-
+import express from "express";
 import { fetchRecord, uploadPDF } from "./services/supabase.js";
 import { generatePDF } from "./services/pdf.js";
 
@@ -7,6 +6,13 @@ const app = express();
 app.use(express.json());
 
 const PORT = process.env.PORT || 3000;
+
+// Map status to which templates to generate
+const STATUS_TEMPLATES = {
+  new:       ["quote"],
+  accepted:  ["toolbox_talk", "swms"],
+  completed: ["invoice"],
+};
 
 // Health check
 app.get("/", (req, res) => res.send("PDF Server running ✅"));
@@ -20,26 +26,35 @@ app.post("/webhook", async (req, res) => {
       return res.status(400).json({ error: "No record in payload" });
     }
 
-    const { id, template_name } = record;
+    const { id, status } = record;
 
-    if (!template_name) {
-      return res.status(400).json({ error: "Missing template_name on record" });
+    if (!status) {
+      return res.status(400).json({ error: "Missing status on record" });
     }
 
-    console.log(`📩 Webhook: table=${table}, id=${id}, template=${template_name}`);
+    const templates = STATUS_TEMPLATES[status];
 
-    // 1. Fetch full record from Supabase
+    if (!templates) {
+      console.log(`⏭️ No PDF needed for status: ${status}`);
+      return res.status(200).json({ skipped: true, status });
+    }
+
+    console.log(`📩 Webhook: table=${table}, id=${id}, status=${status}, templates=${templates}`);
+
+    // Fetch full record from Supabase
     const data = await fetchRecord(table, id);
 
-    // 2. Generate PDF from Supabase Storage template + data
-    const pdfBuffer = await generatePDF(template_name, data);
+    // Generate all PDFs for this status
+    const urls = [];
+    for (const templateName of templates) {
+      const pdfBuffer = await generatePDF(templateName, data);
+      const filePath = `${table}/${templateName}_${id}_${Date.now()}.pdf`;
+      const url = await uploadPDF(pdfBuffer, filePath);
+      urls.push({ template: templateName, url });
+      console.log(`✅ ${templateName}.pdf uploaded: ${url}`);
+    }
 
-    // 3. Upload PDF to Supabase Storage output bucket
-    const filePath = `${table}/${template_name}_${id}_${Date.now()}.pdf`;
-    const url = await uploadPDF(pdfBuffer, filePath);
-
-    console.log(`✅ PDF uploaded: ${url}`);
-    return res.status(200).json({ success: true, url });
+    return res.status(200).json({ success: true, urls });
 
   } catch (err) {
     console.error("❌ Error:", err.message);
