@@ -48,7 +48,7 @@ app.post("/webhook", async (req, res) => {
     const urls = [];
     for (const templateName of templates) {
       const pdfBuffer = await generatePDF(templateName, data);
-      const filePath = `${table}/${templateName}_${id}_${Date.now()}.pdf`;
+      const filePath = `${templateName}/${id}_${Date.now()}.pdf`;
       const url = await uploadPDF(pdfBuffer, filePath);
       urls.push({ template: templateName, url });
       console.log(`✅ ${templateName}.pdf uploaded: ${url}`);
