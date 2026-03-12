@@ -1,4 +1,0 @@
-[master dba97c1] Embedded quote template working successfully
- 4 files changed, 328 insertions(+), 18 deletions(-)
- create mode 100644 nodejs_space/src/templates/quote.html
-###dba97c1af8fe09dbe11dfaa2a54d51781f764069###
