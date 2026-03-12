@@ -1,6 +1,8 @@
 
 import express from "express";
-import { fetchRecord, uploadPDF, updateJobPdfUrl } from "./services/supabase.js";
+import { fetchRecord, uploadPDF, updateJobPdfUrl, getJob } from "./services/supabase.js";
+
+const N8N_QUOTE_WEBHOOK = "https://safetytrafficcontrol.app.n8n.cloud/webhook/quote-ready";
 import { generatePDF } from "./services/pdf.js";
 
 const app = express();
@@ -52,6 +54,17 @@ app.post("/webhook", async (req, res) => {
       const filePath = `${templateName}/${id}_${Date.now()}.pdf`;
       const url = await uploadPDF(pdfBuffer, filePath);
       await updateJobPdfUrl(id, templateName, url);
+
+      // Notify n8n to send quote email
+      if (templateName === "quote") {
+        const job = await getJob(id);
+        await fetch(N8N_QUOTE_WEBHOOK, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ ...job, quote_pdf_url: url }),
+        });
+        console.log(`📧 n8n notified for quote email: ${id}`);
+      }
       urls.push({ template: templateName, url });
       console.log(`✅ ${templateName}.pdf uploaded: ${url}`);
     }
@@ -63,5 +76,3 @@ app.post("/webhook", async (req, res) => {
     return res.status(500).json({ error: err.message });
   }
 });
-
-app.listen(PORT, () => console.log(`🚀 Server listening on port ${PORT}`));76 
