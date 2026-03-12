@@ -4,6 +4,10 @@ services:
     runtime: node
     buildCommand: npm install && npx puppeteer browsers install chrome
     startCommand: npm start
+    disk:
+      name: puppeteer-cache
+      mountPath: /opt/render/project/src/.cache
+      sizeGB: 1
     envVars:
       - key: SUPABASE_URL
         sync: false
