@@ -44,7 +44,6 @@ export async function uploadPDF(pdfBuffer, filePath) {
   return data.publicUrl;
 }
 
-// Write PDF URL back to jobs table so n8n can pick it up
 export async function updateJobPdfUrl(jobId, templateName, url) {
   const colMap = {
     quote:        "quote_pdf_url",
@@ -61,4 +60,15 @@ export async function updateJobPdfUrl(jobId, templateName, url) {
     .eq("id", jobId);
 
   if (error) console.error(`Failed to update ${col}:`, error.message);
+}
+
+export async function getJob(jobId) {
+  const { data, error } = await supabase
+    .from("jobs")
+    .select("*")
+    .eq("id", jobId)
+    .single();
+
+  if (error) console.error("Failed to get job:", error.message);
+  return data;
 }
