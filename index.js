@@ -1,4 +1,4 @@
-
+import "dotenv/config";
 import express from "express";
 import { fetchRecord, uploadPDF, updateJobPdfUrl, getJob } from "./services/supabase.js";
 
